@@ -1,0 +1,23 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.page-header {
+    padding-block: $space-5 $space-4;
+    background: linear-gradient(120deg, #0954E3, #073F9E);
+    color: #fff;
+    text-align: center;
+}
+
+.page-header h1 {
+    margin-bottom: $space-1;
+    color: #fff;
+}
+
+.page-header .eyebrow { color: rgba(255, 255, 255, 0.82); }
+
+.page-header p {
+    color: rgba(255, 255, 255, 0.88);
+    max-width: 56ch;
+    margin-inline: auto;
+    font-size: 1.05rem;
+}

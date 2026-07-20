@@ -1,0 +1,50 @@
+@use 'variables' as *;
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.75rem;
+    border-radius: 999px;
+    font-family: $font-body;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+
+    &:hover { transform: translateY(-2px); }
+
+    &--primary {
+        background: $color-primary;
+        color: $color-text-on-accent;
+        box-shadow: $shadow-sm;
+
+        &:hover { background: $color-primary-dark; }
+    }
+
+    &--outline {
+        background: transparent;
+        border-color: $color-primary;
+        color: $color-primary-dark;
+
+        &:hover { background: $color-primary-soft; }
+    }
+
+    &--light {
+        background: $color-surface;
+        color: $color-primary-dark;
+
+        &:hover { background: $color-bg; }
+    }
+
+    &--block {
+        width: 100%;
+        justify-content: center;
+    }
+
+    &--sm {
+        padding: 0.55rem 1.15rem;
+        font-size: 0.85rem;
+    }
+}

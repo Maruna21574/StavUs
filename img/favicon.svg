@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>STAVUs</title>
+  <path d="M11 29v13c0 10 6 16 16 16s16-6 16-16V17"
+        fill="none" stroke="#17151A" stroke-width="10"
+        stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="M52 8H19C11 8 6 13 6 20s5 12 13 12h7c7 0 12 5 12 12v8"
+        fill="none" stroke="#C3003B" stroke-width="10"
+        stroke-linecap="square" stroke-linejoin="round"/>
+</svg>

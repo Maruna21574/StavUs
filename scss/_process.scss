@@ -1,0 +1,38 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.process {
+    @include section-space;
+    background: $color-bg-alt;
+}
+
+.process__grid {
+    display: grid;
+    gap: $space-3;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    counter-reset: step;
+}
+
+.process__step {
+    position: relative;
+    padding: $space-3;
+    background: $color-surface;
+    border-radius: $radius-md;
+    border: 1px solid $color-border;
+}
+
+.process__step::before {
+    counter-increment: step;
+    content: counter(step, decimal-leading-zero);
+    font-family: $font-heading;
+    font-size: 1.6rem;
+    color: $color-accent;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.process__step p {
+    color: $color-text-soft;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}

@@ -1,0 +1,6 @@
+node_modules/
+
+# Unused raw stock footage (not referenced in code)
+img/11898917_3840_2160_60fps.mp4
+img/14807008_3840_2160_50fps.mp4
+img/19228176-uhd_3840_2160_30fps.mp4

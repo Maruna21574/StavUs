@@ -1,0 +1,101 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.timeline-section {
+    @include section-space;
+    background: $color-bg-alt;
+}
+
+.timeline {
+    position: relative;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 760px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: $color-border;
+
+    @include bp(sm) {
+        left: 27px;
+    }
+}
+
+.timeline__step {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: $space-3;
+    padding-bottom: $space-4;
+
+    &:last-child { padding-bottom: 0; }
+}
+
+.timeline__marker {
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: $color-accent;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-heading;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 0 6px $color-bg-alt;
+
+    @include bp(sm) {
+        width: 56px;
+        height: 56px;
+        font-size: 1.3rem;
+    }
+}
+
+.timeline__content {
+    @include card;
+    flex: 1;
+    padding: $space-3;
+}
+
+.timeline__content h3 {
+    margin-bottom: 0.35rem;
+    font-size: 1.1rem;
+}
+
+.timeline__content p {
+    color: $color-text-soft;
+    font-size: 0.92rem;
+    margin-bottom: 0.7rem;
+}
+
+.timeline__duration {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: $color-primary;
+    background: $color-primary-soft;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+}
+
+.timeline__total {
+    text-align: center;
+    margin-top: $space-4;
+    margin-bottom: 0;
+    color: $color-text-soft;
+
+    strong { color: $color-text; }
+}

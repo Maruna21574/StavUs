@@ -1,0 +1,48 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.usp {
+    padding-block: $space-4;
+    background: linear-gradient(120deg, #0954E3, #073F9E);
+    color: #fff;
+}
+
+.usp__grid {
+    display: grid;
+    gap: $space-3;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include bp(md) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.usp__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.usp__icon {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.usp__item strong {
+    display: block;
+    margin-bottom: 2px;
+    color: #fff;
+}
+
+.usp__item div span {
+    color: rgba(255, 255, 255, 0.78);
+}

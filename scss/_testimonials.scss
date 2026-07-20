@@ -1,0 +1,59 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.testimonials { @include section-space; }
+
+.testimonials__grid {
+    display: grid;
+    gap: $space-3;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.testimonial {
+    @include card;
+    padding: $space-3;
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+}
+
+.testimonial__stars {
+    color: $color-primary;
+    letter-spacing: 2px;
+}
+
+.testimonial p {
+    color: $color-text;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+.testimonial__author {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: auto;
+}
+
+.testimonial__avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: $color-accent-soft;
+    color: $color-accent-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-family: $font-heading;
+}
+
+.testimonial__author strong {
+    display: block;
+    font-size: 0.9rem;
+}
+
+.testimonial__author span {
+    font-size: 0.8rem;
+    color: $color-text-soft;
+}

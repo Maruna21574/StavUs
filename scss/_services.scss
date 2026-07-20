@@ -1,0 +1,146 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.services { @include section-space; }
+
+.services__grid {
+    display: grid;
+    gap: $space-3;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.service-card {
+    @include card;
+    padding: $space-3;
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: $shadow-md;
+    }
+}
+
+.service-card__icon {
+    width: 52px;
+    height: 52px;
+    border-radius: $radius-sm;
+    background: $color-accent-soft;
+    color: $color-accent-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-card h3 { margin-bottom: 0; }
+
+.service-card p {
+    color: $color-text-soft;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+.service-card__link {
+    margin-top: auto;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: $color-accent-dark;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+
+    svg { transition: transform 0.15s ease; }
+    &:hover svg { transform: translateX(3px); }
+}
+
+// Detailné bloky služieb (sluzby.php)
+// Pri nepárnom počte služieb využije posledná karta celý voľný riadok.
+.services__grid > .service-card:last-child {
+    grid-column: 1 / -1;
+
+    @include bp(md) {
+        display: grid;
+        grid-template-columns: 52px minmax(0, 1fr) auto;
+        grid-template-rows: auto auto;
+        column-gap: $space-3;
+        row-gap: 0.35rem;
+        align-items: center;
+
+        .service-card__icon {
+            grid-column: 1;
+            grid-row: 1 / 3;
+        }
+
+        h3 {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        p {
+            grid-column: 2;
+            grid-row: 2;
+            max-width: 64ch;
+        }
+
+        .service-card__link {
+            grid-column: 3;
+            grid-row: 1 / 3;
+            margin-top: 0;
+            white-space: nowrap;
+        }
+    }
+}
+
+.service-detail {
+    display: grid;
+    gap: $space-4;
+    padding-block: $space-4;
+    border-bottom: 1px solid $color-border;
+
+    @include bp(lg) {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: $space-5;
+        align-items: center;
+    }
+
+    &:last-child { border-bottom: none; }
+
+    &:nth-child(even) .service-detail__visual {
+        @include bp(lg) { order: 2; }
+    }
+}
+
+.service-detail__visual {
+    position: relative;
+    aspect-ratio: 16 / 11;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    overflow: hidden;
+    background: linear-gradient(135deg, $color-primary-soft, #D98BA3);
+}
+
+.service-detail__photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-detail__list {
+    display: grid;
+    gap: 0.6rem;
+    margin-top: $space-2;
+
+    li {
+        display: flex;
+        gap: 0.6rem;
+        align-items: flex-start;
+        font-size: 0.95rem;
+        color: $color-text-soft;
+    }
+
+    svg { flex-shrink: 0; margin-top: 3px; color: $color-accent; }
+}

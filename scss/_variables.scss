@@ -1,0 +1,49 @@
+// ==========================================================================
+// Farebná paleta — biele pozadie, modrosivý akcent, sýte tlačidlá
+// ==========================================================================
+
+$color-bg:           #FFFFFF;   // hlavné pozadie stránky
+$color-bg-alt:        #F5F6FA;  // sekcie s jemným kontrastom (takmer biela)
+$color-surface:       #FFFFFF;  // karty, panely
+$color-border:        #E4E6EE;
+
+$color-text:          #262A34;  // hlavný text (neutrálna tmavá, bez hnedej)
+$color-text-soft:     #6B7280;  // sekundárny text
+$color-text-on-accent: #FFFFFF;
+
+// Tlačidlá / CTA
+$color-primary:       #0954E3;
+$color-primary-dark:  #073F9E;
+$color-primary-soft:  #DCE7FB;
+
+// Sekundárny akcent (ikony, odkazy, aktívne stavy) — zladený s hlavnou farbou
+$color-accent:        #0954E3;
+$color-accent-dark:   #073F9E;
+$color-accent-soft:   #DCE7FB;
+
+// Typografia
+$font-heading: 'Fraunces', 'Georgia', serif;
+$font-body:    'Work Sans', 'Segoe UI', sans-serif;
+
+// Rozostupy
+$space-1: 0.5rem;
+$space-2: 1rem;
+$space-3: 1.5rem;
+$space-4: 2.5rem;
+$space-5: 4rem;
+$space-6: 6rem;
+
+// Rádiusy a tiene
+$radius-sm: 8px;
+$radius-md: 16px;
+$radius-lg: 28px;
+$shadow-sm: 0 2px 8px rgba(38, 42, 52, 0.06);
+$shadow-md: 0 12px 32px rgba(38, 42, 52, 0.10);
+
+// Breakpoints
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+$container-width: 1200px;

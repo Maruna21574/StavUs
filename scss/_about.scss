@@ -1,0 +1,70 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.about-intro {
+    @include section-space;
+
+    .container {
+        display: grid;
+        gap: $space-4;
+
+        @include bp(lg) {
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: $space-5;
+        }
+    }
+}
+
+.about-intro__visual {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border-radius: $radius-lg;
+    background: linear-gradient(135deg, $color-primary-soft 0%, #D98BA3 60%, $color-primary 130%);
+    box-shadow: $shadow-md;
+    overflow: hidden;
+}
+
+.about-intro__photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.values {
+    @include section-space;
+    background: $color-bg-alt;
+}
+
+.values__grid {
+    display: grid;
+    gap: $space-3;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.value-card {
+    @include card;
+    padding: $space-3;
+    text-align: center;
+}
+
+.value-card__icon {
+    width: 48px;
+    height: 48px;
+    margin-inline: auto;
+    margin-bottom: $space-2;
+    border-radius: 50%;
+    background: $color-accent-soft;
+    color: $color-accent-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.value-card p {
+    color: $color-text-soft;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
