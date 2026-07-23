@@ -6,7 +6,7 @@
             <h2>Máte predstavu o novom interiéri?</h2>
             <p>Poraďme sa spolu — konzultácia je nezáväzná a bez poplatku.</p>
         </div>
-        <a href="kontakt.php" class="btn btn--light">Dohodnúť konzultáciu</a>
+        <a href="/kontakt" class="btn btn--light">Dohodnúť konzultáciu</a>
     </div>
 </section>
 
@@ -39,11 +39,11 @@
         <div class="footer-col">
             <h3>Služby</h3>
             <ul>
-                <li><a href="sluzby.php#dlazby">Dlažby</a></li>
-                <li><a href="sluzby.php#mikrocement">Mikrocement</a></li>
-                <li><a href="sluzby.php#stierky">Dekoračné stierky</a></li>
-                <li><a href="sluzby.php#kupelne">Kúpeľne</a></li>
-                <li><a href="sluzby.php#interier">Interiérové práce</a></li>
+                <li><a href="/sluzby#dlazby">Dlažby</a></li>
+                <li><a href="/sluzby#mikrocement">Mikrocement</a></li>
+                <li><a href="/sluzby#stierky">Dekoračné stierky</a></li>
+                <li><a href="/sluzby#kupelne">Kúpeľne</a></li>
+                <li><a href="/sluzby#interier">Interiérové práce</a></li>
             </ul>
         </div>
 
@@ -62,8 +62,8 @@
         <div class="container site-footer__bottom-inner">
             <p>&copy; <?= date('Y') ?> <?= htmlspecialchars($cfg['site_name']) ?>. Všetky práva vyhradené.</p>
             <ul class="footer-legal">
-                <li><a href="gdpr.php">Ochrana osobných údajov</a></li>
-                <li><a href="gdpr.php#cookies">Cookies</a></li>
+                <li><a href="/gdpr">Ochrana osobných údajov</a></li>
+                <li><a href="/gdpr#cookies">Cookies</a></li>
             </ul>
         </div>
     </div>
@@ -71,13 +71,41 @@
 
 <div class="cookie-banner" id="cookieBanner" hidden>
     <div class="cookie-banner__inner">
-        <p>Táto stránka používa cookies na zabezpečenie základnej funkčnosti a analýzu návštevnosti. Viac info nájdete v <a href="gdpr.php#cookies">zásadách používania cookies</a>.</p>
+        <p>Táto stránka používa cookies na zabezpečenie základnej funkčnosti a analýzu návštevnosti. Viac info nájdete v <a href="/gdpr#cookies">zásadách používania cookies</a>.</p>
         <div class="cookie-banner__actions">
             <button type="button" class="btn btn--outline btn--sm" id="cookieDecline">Odmietnuť</button>
             <button type="button" class="btn btn--primary btn--sm" id="cookieAccept">Súhlasím</button>
         </div>
     </div>
 </div>
+
+<script type="application/ld+json">
+<?php
+$schemaSameAs = array_values(array_filter([
+    $cfg['social']['instagram'] ?? '',
+    $cfg['social']['facebook'] ?? '',
+]));
+$schema = [
+    '@context'   => 'https://schema.org',
+    '@type'      => 'HomeAndConstructionBusiness',
+    'name'       => $cfg['site_name'],
+    'description'=> $cfg['site_tagline'],
+    'image'      => $ogImageUrl,
+    'url'        => $siteUrl,
+    'telephone'  => $cfg['phone_link'],
+    'email'      => $cfg['email'],
+    'address'    => [
+        '@type'           => 'PostalAddress',
+        'addressLocality' => $cfg['address_line1'],
+        'addressCountry'  => 'SK',
+    ],
+];
+if ($schemaSameAs) {
+    $schema['sameAs'] = $schemaSameAs;
+}
+echo json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+?>
+</script>
 
 <script src="js/main.js"></script>
 </body>

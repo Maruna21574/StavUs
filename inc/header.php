@@ -8,13 +8,19 @@ $cfg = require __DIR__ . '/config.php';
 $pageTitle       = $pageTitle ?? $cfg['site_name'];
 $pageDescription = $pageDescription ?? $cfg['site_tagline'];
 $activePage      = $activePage ?? '';
+$pageImage       = $pageImage ?? $cfg['og_image'];
+
+$siteUrl      = rtrim($cfg['site_url'], '/');
+$requestPath  = strtok($_SERVER['REQUEST_URI'] ?? '/', '?');
+$canonicalUrl = $siteUrl . $requestPath;
+$ogImageUrl   = $siteUrl . '/' . ltrim($pageImage, '/');
 
 $navItems = [
-    'home'       => ['url' => 'index.php',      'label' => 'Domov'],
-    'sluzby'     => ['url' => 'sluzby.php',      'label' => 'Služby'],
-    'referencie' => ['url' => 'referencie.php',  'label' => 'Referencie'],
-    'o-nas'      => ['url' => 'o-nas.php',       'label' => 'O nás'],
-    'kontakt'    => ['url' => 'kontakt.php',     'label' => 'Kontakt'],
+    'home'       => ['url' => '/',            'label' => 'Domov'],
+    'sluzby'     => ['url' => '/sluzby',      'label' => 'Služby'],
+    'referencie' => ['url' => '/referencie',  'label' => 'Referencie'],
+    'o-nas'      => ['url' => '/o-nas',       'label' => 'O nás'],
+    'kontakt'    => ['url' => '/kontakt',     'label' => 'Kontakt'],
 ];
 ?>
 <!doctype html>
@@ -24,7 +30,25 @@ $navItems = [
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?= htmlspecialchars($pageTitle) ?> | <?= htmlspecialchars($cfg['site_name']) ?></title>
 <meta name="description" content="<?= htmlspecialchars($pageDescription) ?>">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="<?= htmlspecialchars($canonicalUrl) ?>">
 <link rel="icon" type="image/png" href="img/favicon_stav.png?v=3">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="<?= htmlspecialchars($cfg['site_name']) ?>">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:title" content="<?= htmlspecialchars($pageTitle) ?> | <?= htmlspecialchars($cfg['site_name']) ?>">
+<meta property="og:description" content="<?= htmlspecialchars($pageDescription) ?>">
+<meta property="og:url" content="<?= htmlspecialchars($canonicalUrl) ?>">
+<meta property="og:image" content="<?= htmlspecialchars($ogImageUrl) ?>">
+<meta property="og:image:width" content="960">
+<meta property="og:image:height" content="540">
+<meta property="og:image:alt" content="<?= htmlspecialchars($cfg['site_name']) ?> — <?= htmlspecialchars($cfg['site_tagline']) ?>">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<?= htmlspecialchars($pageTitle) ?> | <?= htmlspecialchars($cfg['site_name']) ?>">
+<meta name="twitter:description" content="<?= htmlspecialchars($pageDescription) ?>">
+<meta name="twitter:image" content="<?= htmlspecialchars($ogImageUrl) ?>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +62,7 @@ $navItems = [
 
 <header class="site-header">
     <div class="container site-header__inner">
-        <a href="index.php" class="brand">
+        <a href="/" class="brand">
             <img class="brand__logo" src="img/stav_us_blue.png" alt="<?= htmlspecialchars($cfg['site_name']) ?>">
         </a>
 

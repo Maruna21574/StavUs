@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     initBeforeAfterSliders();
-    initProjectsMap();
     initCookieBanner();
     initLightbox();
     initVideoHero();
@@ -72,6 +71,8 @@ function initVideoHero() {
             slide.classList.toggle('is-active', active);
             slide.setAttribute('aria-hidden', active ? 'false' : 'true');
             if (!video) return;
+            var rate = parseFloat(video.getAttribute('data-playback-rate'));
+            video.playbackRate = isNaN(rate) ? 1 : rate;
             if (active && !reduceMotion) {
                 var playPromise = video.play();
                 if (playPromise) playPromise.catch(function () { /* poster zostane viditeľný */ });
@@ -272,46 +273,4 @@ function initBeforeAfterSliders() {
 
         setPosition(parseFloat(range.value) || 50);
     });
-}
-
-// ---------------------------------------------------------------------
-// Mapa realizovaných projektov (Leaflet + OpenStreetMap)
-// ---------------------------------------------------------------------
-function initProjectsMap() {
-    var el = document.getElementById('projectsMap');
-    if (!el || typeof L === 'undefined') return;
-
-    var locations = [];
-    try {
-        locations = JSON.parse(el.getAttribute('data-locations') || '[]');
-    } catch (err) {
-        locations = [];
-    }
-    if (!locations.length) return;
-
-    var map = L.map(el, { scrollWheelZoom: false }).setView([48.27, 17.32], 9);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> prispievatelia'
-    }).addTo(map);
-
-    var pinIcon = L.divIcon({
-        className: 'map-pin',
-        html: '<span></span>',
-        iconSize: [26, 26],
-        iconAnchor: [13, 26],
-        popupAnchor: [0, -26]
-    });
-
-    locations.forEach(function (loc) {
-        var countLabel = loc.count === 1 ? 'realizácia' : (loc.count < 5 ? 'realizácie' : 'realizácií');
-        L.marker([loc.lat, loc.lng], { icon: pinIcon })
-            .addTo(map)
-            .bindPopup('<strong>' + loc.name + '</strong><br>' + loc.count + ' ' + countLabel);
-    });
-
-    el.addEventListener('click', function enableZoom() {
-        map.scrollWheelZoom.enable();
-    }, { once: true });
 }

@@ -7,18 +7,18 @@ require __DIR__ . '/inc/header.php';
 
 <section class="video-hero" data-video-hero aria-label="Úvodná prezentácia">
     <article class="video-hero__slide video-hero__slide--craft" data-hero-slide aria-hidden="true">
-        <video class="video-hero__video" muted loop playsinline preload="metadata" poster="img/hero-pokladka-poster.jpg">
-            <source src="img/hero-pokladka.mp4" type="video/mp4">
+        <video class="video-hero__video" muted loop playsinline preload="metadata" poster="img/hero-pokladka-poster.jpg" data-playback-rate="0.45">
+            <source src="img/rem%20(1).mp4" type="video/mp4">
         </video>
         <div class="video-hero__overlay" aria-hidden="true"></div>
         <div class="container video-hero__inner">
             <div class="video-hero__content">
-                <span class="video-hero__eyebrow">Precízne remeslo · STAVUs</span>
-                <h1>Interiér stojí na detailoch, ktoré robíme poriadne</h1>
-                <p>Obklady, dlažby a povrchy realizované s presnosťou od prvého zamerania po poslednú škáru.</p>
+                <span class="video-hero__eyebrow">Dekoračné stierky · STAVUs</span>
+                <h1>Stierka, ktorá dá interiéru charakter</h1>
+                <p>Hladké aj štruktúrované povrchy nanášané ručne s citom pre detail — od podkladu až po finálnu úpravu.</p>
                 <div class="video-hero__actions">
-                    <a href="kontakt.php" class="btn btn--light">Nezáväzná konzultácia</a>
-                    <a href="referencie.php" class="video-hero__text-link">Pozrieť realizácie <span>→</span></a>
+                    <a href="/kontakt" class="btn btn--light">Nezáväzná konzultácia</a>
+                    <a href="/referencie" class="video-hero__text-link">Pozrieť realizácie <span>→</span></a>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@ require __DIR__ . '/inc/header.php';
                 <span class="video-hero__eyebrow">Kúpeľne na kľúč</span>
                 <h2>Priestor, v ktorom sa každý deň začína lepšie</h2>
                 <p>Kompletná realizácia kúpeľne — od obkladov a sanity až po čistý finálny detail.</p>
-                <a href="sluzby.php#kupelne" class="btn btn--primary">Realizácia kúpeľne</a>
+                <a href="/sluzby#kupelne" class="btn btn--primary">Realizácia kúpeľne</a>
             </div>
         </div>
     </article>
@@ -50,8 +50,8 @@ require __DIR__ . '/inc/header.php';
                 <h2>Precízny obklad mení celý priestor</h2>
                 <p>Čisté línie, presné škáry a kvalitné prevedenie, ktoré zostane krásne aj po rokoch.</p>
                 <div class="video-hero__actions">
-                    <a href="sluzby.php" class="btn btn--primary">Naše služby</a>
-                    <a href="kontakt.php" class="btn btn--outline">Napíšte nám</a>
+                    <a href="/sluzby" class="btn btn--primary">Naše služby</a>
+                    <a href="/kontakt" class="btn btn--outline">Napíšte nám</a>
                 </div>
             </div>
         </div>
@@ -73,8 +73,8 @@ require __DIR__ . '/inc/header.php';
             <h1>Interiéry, ktoré majú dušu — od dlažby po poslednú stierku</h1>
             <p>Navrhujeme a realizujeme moderné interiéry: dlažby, mikrocement, dekoračné stierky a kúpeľne na mieru. Bez hrubej stavby, len čistá interiérová remeselná práca.</p>
             <div class="hero__actions">
-                <a href="kontakt.php" class="btn btn--primary">Nezáväzná konzultácia</a>
-                <a href="sluzby.php" class="btn btn--outline">Pozrieť služby</a>
+                <a href="/kontakt" class="btn btn--primary">Nezáväzná konzultácia</a>
+                <a href="/sluzby" class="btn btn--outline">Pozrieť služby</a>
             </div>
             <div class="hero__stats">
                 <div class="hero__stat"><strong>10+</strong><span>rokov skúseností</span></div>
@@ -114,7 +114,7 @@ require __DIR__ . '/inc/header.php';
                 </span>
                 <h3>Dlažby</h3>
                 <p>Veľkoformátové dlažby a obklady do interiéru s precíznym prevedením škár a spádov.</p>
-                <a href="sluzby.php#dlazby" class="service-card__link">Viac o službe
+                <a href="/sluzby#dlazby" class="service-card__link">Viac o službe
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </a>
             </article>
@@ -125,7 +125,7 @@ require __DIR__ . '/inc/header.php';
                 </span>
                 <h3>Mikrocement</h3>
                 <p>Bezškárová, elegantná povrchová úprava podláh, stien aj kúpeľní v jednoliatom dizajne.</p>
-                <a href="sluzby.php#mikrocement" class="service-card__link">Viac o službe
+                <a href="/sluzby#mikrocement" class="service-card__link">Viac o službe
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </a>
             </article>
@@ -136,7 +136,7 @@ require __DIR__ . '/inc/header.php';
                 </span>
                 <h3>Dekoračné stierky</h3>
                 <p>Benátsky štuk a dekoračné stierky, ktoré dodajú stenám hĺbku, textúru a charakter.</p>
-                <a href="sluzby.php#stierky" class="service-card__link">Viac o službe
+                <a href="/sluzby#stierky" class="service-card__link">Viac o službe
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </a>
             </article>
@@ -147,7 +147,7 @@ require __DIR__ . '/inc/header.php';
                 </span>
                 <h3>Kúpeľne</h3>
                 <p>Kompletná realizácia kúpeľní na kľúč — od obkladov po sanitu a osvetlenie.</p>
-                <a href="sluzby.php#kupelne" class="service-card__link">Viac o službe
+                <a href="/sluzby#kupelne" class="service-card__link">Viac o službe
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </a>
             </article>
@@ -158,7 +158,7 @@ require __DIR__ . '/inc/header.php';
                 </span>
                 <h3>Interiérové práce</h3>
                 <p>Maľby, podlahy, obklady stien a ďalšie dokončovacie práce pre kompletný interiér.</p>
-                <a href="sluzby.php#interier" class="service-card__link">Viac o službe
+                <a href="/sluzby#interier" class="service-card__link">Viac o službe
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </a>
             </article>

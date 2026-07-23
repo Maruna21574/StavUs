@@ -6,12 +6,14 @@
 
 return [
     'site_name'      => 'STAV US',
+    'site_url'       => 'https://www.stavus.sk',
     'site_slogan'    => 'Interiéry, ktoré majú dušu',
     'site_tagline'   => 'Dlažby, mikrocement a dekoračné stierky na mieru',
+    'og_image'       => 'img/hero-sprcha-poster.jpg',
 
     'phone'          => '0910 807 707',
     'phone_link'     => '+421910807707',
-    'email'          => 'ukusstefan@gmail.com',
+    'email'          => 'info@stavus.sk',
     'address_line1'  => 'Trenčín',
     'address_line2'  => '911 01, Slovensko',
     'ico'             => '',

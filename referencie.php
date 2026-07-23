@@ -104,16 +104,6 @@ $filters = [
     'stierky'     => 'Dekoračné stierky',
     'kupelne'     => 'Kúpeľne',
 ];
-
-// Mesto => súradnice + počet realizácií (nie fotiek) — odvodené z $projects vyššie
-$mapLocations = [
-    ['name' => 'Bratislava', 'lat' => 48.1486, 'lng' => 17.1077, 'count' => 4],
-    ['name' => 'Trnava',     'lat' => 48.3709, 'lng' => 17.5836, 'count' => 5],
-    ['name' => 'Pezinok',    'lat' => 48.2853, 'lng' => 17.2669, 'count' => 2],
-    ['name' => 'Modra',      'lat' => 48.3282, 'lng' => 17.3073, 'count' => 3],
-    ['name' => 'Senec',      'lat' => 48.2202, 'lng' => 17.4004, 'count' => 3],
-    ['name' => 'Malacky',    'lat' => 48.4353, 'lng' => 17.0202, 'count' => 3],
-];
 ?>
 
 <section class="page-header">
@@ -179,17 +169,11 @@ $mapLocations = [
 <section class="projects-map">
     <div class="container">
         <div class="section-head section-head--center">
-            <span class="eyebrow">Kde sme realizovali</span>
-            <h2>Mapa realizovaných projektov</h2>
-            <p>Naše realizácie naprieč Bratislavským a Trnavským krajom.</p>
+            <span class="eyebrow">Kde pôsobíme</span>
+            <h2>Trenčín a okolie</h2>
+            <p>Realizácie robíme v Trenčíne a jeho okolí — v prípade záujmu sa dohodneme aj na realizácii mimo tohto regiónu.</p>
         </div>
-
-        <div id="projectsMap" class="projects-map__canvas" data-locations='<?= htmlspecialchars(json_encode($mapLocations), ENT_QUOTES) ?>'></div>
-        <p class="projects-map__hint">Kliknutím na mapu povolíte priblíženie kolieskom myši.</p>
     </div>
 </section>
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <?php require __DIR__ . '/inc/footer.php'; ?>

@@ -1,6 +1,7 @@
 <?php
 $pageTitle = 'Služby';
 $pageDescription = 'Dlažby, mikrocement, dekoračné stierky, kúpeľne a interiérové práce na mieru.';
+$pageImage = 'img/hero-pokladka-poster.jpg';
 $activePage = 'sluzby';
 require __DIR__ . '/inc/header.php';
 
@@ -34,7 +35,7 @@ function check_icon() {
                     <li><?= check_icon() ?> Presné kladenie a škárovanie</li>
                     <li><?= check_icon() ?> Realizácia prechodov a lišt</li>
                 </ul>
-                <a href="kontakt.php" class="btn btn--primary" style="margin-top:1.5rem">Nezáväzná konzultácia</a>
+                <a href="/kontakt" class="btn btn--primary" style="margin-top:1.5rem">Nezáväzná konzultácia</a>
             </div>
         </div>
 
@@ -52,7 +53,7 @@ function check_icon() {
                     <li><?= check_icon() ?> Bezškárový, hygienický povrch</li>
                     <li><?= check_icon() ?> Ochranné povrchové vrstvy</li>
                 </ul>
-                <a href="kontakt.php" class="btn btn--primary" style="margin-top:1.5rem">Nezáväzná konzultácia</a>
+                <a href="/kontakt" class="btn btn--primary" style="margin-top:1.5rem">Nezáväzná konzultácia</a>
             </div>
         </div>
 
@@ -70,7 +71,7 @@ function check_icon() {
                     <li><?= check_icon() ?> Efekt hĺbky a jemného lesku</li>
                     <li><?= check_icon() ?> Ochranný náter pre dlhú životnosť</li>
                 </ul>
-                <a href="kontakt.php" class="btn btn--primary" style="margin-top:1.5rem">Nezáväzná konzultácia</a>
+                <a href="/kontakt" class="btn btn--primary" style="margin-top:1.5rem">Nezáväzná konzultácia</a>
             </div>
         </div>
 
@@ -88,7 +89,7 @@ function check_icon() {
                     <li><?= check_icon() ?> Osadenie sanity a batérií</li>
                     <li><?= check_icon() ?> Kompletné odovzdanie na kľúč</li>
                 </ul>
-                <a href="kontakt.php" class="btn btn--primary" style="margin-top:1.5rem">Nezáväzná konzultácia</a>
+                <a href="/kontakt" class="btn btn--primary" style="margin-top:1.5rem">Nezáväzná konzultácia</a>
             </div>
         </div>
 
@@ -106,7 +107,7 @@ function check_icon() {
                     <li><?= check_icon() ?> Montáž doplnkov a osvetlenia</li>
                     <li><?= check_icon() ?> Finálne upratanie priestoru</li>
                 </ul>
-                <a href="kontakt.php" class="btn btn--primary" style="margin-top:1.5rem">Nezáväzná konzultácia</a>
+                <a href="/kontakt" class="btn btn--primary" style="margin-top:1.5rem">Nezáväzná konzultácia</a>
             </div>
         </div>
 

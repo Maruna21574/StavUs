@@ -97,10 +97,14 @@
 .video-hero__slide--craft {
     color: #fff;
 
+    .video-hero__video {
+        filter: brightness(1.65) contrast(0.95);
+    }
+
     .video-hero__overlay {
         background:
-            linear-gradient(90deg, rgba(20, 15, 18, 0.88) 0%, rgba(20, 15, 18, 0.55) 48%, rgba(20, 15, 18, 0.15) 100%),
-            linear-gradient(0deg, rgba(20, 15, 18, 0.42), transparent 45%);
+            linear-gradient(90deg, rgba(20, 15, 18, 0.68) 0%, rgba(20, 15, 18, 0.35) 48%, rgba(20, 15, 18, 0.05) 100%),
+            linear-gradient(0deg, rgba(20, 15, 18, 0.28), transparent 45%);
     }
 
     h1, p { color: #fff; }

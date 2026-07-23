@@ -36,7 +36,6 @@ require __DIR__ . '/inc/header.php';
         <p>Táto stránka používa malé množstvo súborov cookie a technológií lokálneho úložiska prehliadača:</p>
         <ul>
             <li><strong>Nevyhnutné cookies</strong> — zabezpečujú základnú funkčnosť stránky (napr. zapamätanie vášho súhlasu s cookies). Bez nich stránka nemôže fungovať správne.</li>
-            <li><strong>Cookies tretích strán</strong> — pri zobrazení interaktívnej mapy realizácií (OpenStreetMap / Leaflet) môže dôjsť k načítaniu technických cookies od poskytovateľa mapových podkladov.</li>
         </ul>
         <p>Analytické ani marketingové cookies na stránke aktuálne nepoužívame. Súhlas alebo nesúhlas s cookies môžete kedykoľvek zmeniť vymazaním údajov lokálneho úložiska vo vašom prehliadači pre túto stránku.</p>
 
